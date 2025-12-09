@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Larsen - Finance Portfolio</title>
+    <link rel="stylesheet" href="custom-styles.css">
+    <style>
+        /* Custom CSS created from scratch */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #764ba2;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tagline {
+            color: #667eea;
+            font-size: 1.4em;
+            font-style: italic;
+        }
+        
+        .content-section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .intro-text {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        /* Custom styling for nested lists */
+        .nested-list-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .outer-list {
+            list-style-type: decimal;
+            font-size: 1.1em;
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        .outer-list > li {
+            margin-bottom: 15px;
+        }
+        
+        .inner-list {
+            list-style-type: circle;
+            margin-top: 10px;
+            margin-left: 20px;
+            font-weight: normal;
+            color: #555;
+        }
+        
+        .inner-list li {
+            margin-bottom: 8px;
+        }
+        
+        /* Custom image styling */
+        .custom-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            display: block;
+            margin: 30px auto;
+        }
+        
+        .custom-image:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+        
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Tableau container */
+        .tableau-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        /* On-page anchor styling */
+        .anchor-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .anchor-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Custom background for specific div */
+        .featured-div {
+            background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .featured-div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(118, 75, 162, 0.85);
+            border-radius: 15px;
+        }
+        
+        .featured-div-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .featured-div h3 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Grid layout for positioning divs */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .grid-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .grid-item h4 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Navigation to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #764ba2;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            background: #667eea;
+            transform: translateY(-5px);
+        }
+        
+        .nav-menu {
+            background: rgba(118, 75, 162, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="top">
+            <h1>Ethan Larsen - Finance Portfolio</h1>
+            <p class="tagline">Exploring Markets, Data, and Investment Strategy</p>
+        </header>
+
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#tableau">Tableau</a>
+            <a href="#contact">Contact</a>
+            <a href="webapp.html">AI App</a>
+        </nav>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h2>About This Page</h2>
+            <p class="intro-text">
+                Welcome to my from-scratch finance portfolio page! This page was built entirely from a blank HTML file, showcasing my understanding of HTML structure, CSS styling, and web development fundamentals. Every element you see here was carefully crafted to demonstrate various technical skills required for modern web development while highlighting my passion for finance and investment analysis.
+            </p>
+
+            <!-- Nested Lists - REQUIRED FOR ASSIGNMENT -->
+            <div class="nested-list-container">
+                <h3 style="color: #764ba2; margin-bottom: 20px;">Skills Demonstrated on This Page</h3>
+                <ol class="outer-list">
+                    <li>HTML & CSS Fundamentals
+                        <ul class="inner-list">
+                            <li>Semantic HTML structure with proper tags</li>
+                            <li>Custom CSS styling without frameworks</li>
+                            <li>Responsive design principles for all devices</li>
+                            <li>Modern layout techniques (Grid & Flexbox)</li>
+                        </ul>
+                    </li>
+                    <li>Multimedia Integration
+                        <ul class="inner-list">
+                            <li>Embedded YouTube videos for educational content</li>
+                            <li>Responsive image handling and optimization</li>
+                            <li>Interactive Tableau visualizations for data storytelling</li>
+                            <li>Background images and gradient effects</li>
+                        </ul>
+                    </li>
+                    <li>Advanced CSS Techniques
+                        <ul class="inner-list">
+                            <li>Custom animations and smooth transitions</li>
+                            <li>Linear gradient backgrounds for visual appeal</li>
+                            <li>Box shadows and layered visual depth</li>
+                            <li>Pseudo-elements for advanced styling effects</li>
+                        </ul>
+                    </li>
+                    <li>Finance & Business Applications
+                        <ul class="inner-list">
+                            <li>Financial data visualization techniques</li>
+                            <li>Investment portfolio presentation methods</li>
+                            <li>Market analysis dashboards</li>
+                            <li>Professional financial reporting layouts</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <p style="margin-top: 20px; font-style: italic; color: #666;">
+                Jump to: <a href="#projects" class="anchor-link">Projects</a> | 
+                <a href="#tableau" class="anchor-link">Tableau Visualization</a> | 
+                <a href="#video" class="anchor-link">Video Content</a>
+            </p>
+        </section>
+
+        <!-- Custom Image Section - REQUIRED FOR ASSIGNMENT -->
+        <section id="projects" class="content-section">
+            <h2>Featured Project: Investment Portfolio Analyzer</h2>
+            <p class="intro-text">
+                During my internship at Ensign Peak, I developed an investment portfolio analysis tool that tracks asset allocation, calculates risk metrics, and generates performance reports. This project combines financial modeling with data visualization to help investors make informed decisions based on historical data and market trends.
+            </p>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt="Financial Dashboard Analysis" class="custom-image">
+            <p class="intro-text" style="margin-top: 20px;">
+                The tool features real-time data integration, automated risk calculations, and customizable reporting dashboards. It incorporates modern portfolio theory principles and uses Excel VBA and Python for data processing, demonstrating both technical proficiency and financial acumen.
+            </p>
+        </section>
+
+        <!-- Custom Background Div - REQUIRED FOR ASSIGNMENT -->
+        <div class="featured-div">
+            <div class="featured-div-content">
+                <h3>Passion for Financial Markets</h3>
+                <p style="font-size: 1.3em;">
+                    Transforming complex financial data into actionable investment insights. With experience from Ensign Peak and strong technical skills in Excel, Tableau, Python, and SQL, I bridge the gap between quantitative analysis and strategic financial decision-making. My goal is to leverage data-driven approaches to optimize portfolio performance and manage risk effectively.
+                </p>
+            </div>
+        </div>
+
+        <!-- Grid Layout for Content Blocks - THREE DIVS FOR POSITIONING -->
+        <section class="content-section">
+            <h2>Core Competencies in Finance</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h4>📊 Financial Analysis</h4>
+                    <p>Expertise in analyzing financial statements, calculating key ratios, and evaluating investment opportunities. Skilled in DCF modeling, comparable company analysis, and precedent transactions for valuation purposes.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>💼 Investment Strategy</h4>
+                    <p>Strong foundation in portfolio management, asset allocation, and risk assessment. Experience with equity research, fixed income analysis, and alternative investments through Ensign Peak internship.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>💻 Technical Proficiency</h4>
+                    <p>Advanced skills in Excel financial modeling, Tableau dashboards, SQL database queries, and Python for quantitative analysis. Comfortable building automated tools and data pipelines for financial applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Video Section - REQUIRED FOR ASSIGNMENT -->
+        <section id="video" class="content-section">
+            <h2>Featured Video: Understanding Financial Markets</h2>
+            <p class="intro-text">
+                This video provides an excellent introduction to financial markets and investment principles. Understanding these concepts is crucial for anyone pursuing a career in finance, investment management, or financial analysis.
+            </p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/WQui_3Hpmmc" 
+                    title="Financial Markets Introduction" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="intro-text" style="margin-top: 20px;">
+                Key takeaways include understanding market structure, the role of financial intermediaries, and how different asset classes behave under various economic conditions. These fundamentals are essential for building a successful career in finance.
+            </p>
+        </section>
+
+        <!-- Tableau Visualization - REQUIRED FOR ASSIGNMENT -->
+        <section id="tableau" class="content-section">
+            <h2>Interactive Financial Visualization</h2>
+            <p class="intro-text">
+                Below is an interactive Tableau visualization demonstrating my ability to work with real-world business data and create meaningful insights. This dashboard showcases entrepreneurship patterns and financial metrics, illustrating how data visualization can transform raw numbers into compelling stories.
+            </p>
+            <div class="tableau-container">
+                <div class='tableauPlaceholder' style='width: 100%; max-width: 1000px; margin: 0 auto;'>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='Tale-of-100-Entrepreneurs_10_0_0/Taleof100Entrepreneurs' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+                <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+            </div>
+            <p class="intro-text" style="margin-top: 20px;">
+                This type of visualization is crucial in financial services for presenting portfolio performance, market analysis, and investment recommendations to clients and stakeholders. The ability to communicate complex financial data visually is a key differentiator in modern finance roles.
+            </p>
+        </section>
+
+        <!-- Contact Section - ON-PAGE ANCHOR TARGET -->
+        <section id="contact" class="content-section">
+            <h2>Get In Touch</h2>
+            <p class="intro-text">
+                Interested in discussing finance, investment opportunities, or potential collaborations? I'm always excited to connect with fellow finance enthusiasts, industry professionals, and those passionate about leveraging data in financial decision-making.
+            </p>
+            <div style="text-align: center; font-size: 1.2em;">
+                <p><strong>Email:</strong> ethanglarsen@gmail.com</p>
+                <p><strong>Phone:</strong> (623) 200-7086</p>
+                <p><strong>Location:</strong> Cave Creek, Arizona</p>
+                <p style="margin-top: 20px;">
+                    <a href="index.html" class="anchor-link">Return to Main Site</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <a href="#top" class="back-to-top">↑</a>
+</body>
+</html>
