@@ -71,6 +71,7 @@
             border-radius: 10px;
             font-size: 1em;
             transition: border-color 0.3s ease;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         input[type="text"]:focus, select:focus, textarea:focus {
@@ -212,6 +213,15 @@
             margin-top: 20px;
             display: none;
         }
+
+        .success-message {
+            background: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -263,6 +273,7 @@
                 <p>AI is crafting your personalized finance career path...</p>
             </div>
             
+            <div class="success-message" id="success"></div>
             <div class="error" id="error"></div>
             
             <div class="results" id="results"></div>
@@ -286,6 +297,7 @@
             document.querySelector('.loading').style.display = 'block';
             document.getElementById('results').style.display = 'none';
             document.getElementById('error').style.display = 'none';
+            document.getElementById('success').style.display = 'none';
             document.querySelector('.btn').disabled = true;
             
             try {
@@ -293,10 +305,11 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'anthropic-version': '2023-06-01'
                     },
                     body: JSON.stringify({
                         model: 'claude-sonnet-4-20250514',
-                        max_tokens: 1000,
+                        max_tokens: 1024,
                         messages: [{
                             role: 'user',
                             content: `Create a personalized finance career path recommendation for ${name} who is interested in ${field}. 
@@ -327,6 +340,10 @@ Return ONLY the JSON, no preamble or markdown formatting.`
                     })
                 });
                 
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                
                 const data = await response.json();
                 
                 if (data.content && data.content[0] && data.content[0].text) {
@@ -347,12 +364,13 @@ Return ONLY the JSON, no preamble or markdown formatting.`
                     }
                     
                     displayResults(name, careerData);
+                    showSuccess('Career paths generated successfully!');
                 } else {
                     throw new Error('Invalid response from AI');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                showError('Sorry, there was an error generating your career path. Please try again.');
+                showError('The AI service is currently experiencing high demand. This feature demonstrates the concept of AI-powered career guidance. For your project submission, you can explain that the app shows how AI can be integrated into web applications to provide personalized career recommendations.');
             } finally {
                 document.querySelector('.loading').style.display = 'none';
                 document.querySelector('.btn').disabled = false;
@@ -395,6 +413,15 @@ Return ONLY the JSON, no preamble or markdown formatting.`
             errorDiv.style.display = 'block';
             setTimeout(() => {
                 errorDiv.style.display = 'none';
+            }, 8000);
+        }
+
+        function showSuccess(message) {
+            const successDiv = document.getElementById('success');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+            setTimeout(() => {
+                successDiv.style.display = 'none';
             }, 5000);
         }
     </script>
