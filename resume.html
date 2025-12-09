@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Larsen - Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+        }
+        
+        .resume-header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .resume-header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .resume-header .contact-info {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        
+        .resume-header .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .resume-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .item-subtitle {
+            font-size: 1.1rem;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .item-date {
+            color: #7f8c8d;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-category ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .skill-category li {
+            color: #555;
+            margin-bottom: 5px;
+        }
+        
+        .honors-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .honors-list li {
+            padding: 12px;
+            background: #ecf0f1;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+            color: #555;
+        }
+        
+        .honors-list li i {
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin: 30px auto;
+            padding: 12px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #2980b9;
+            color: white;
+        }
+        
+        @media print {
+            .back-button {
+                display: none;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="text-center mb-4">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+        
+        <!-- Header -->
+        <div class="resume-header">
+            <h1>Ethan Larsen</h1>
+            <div class="contact-info">
+                27815 N 45th Way · Cave Creek, AZ 85331<br>
+                (623) 200-7086 · <a href="mailto:ethanglarsen@gmail.com">ethanglarsen@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- Objective -->
+        <div class="resume-section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="item-description">
+                Motivated Pre-Business student at Brigham Young University with a 3.75 GPA, combining strong analytical skills with hands-on experience in finance and operations. Eagle Scout and National Honor Society member with proven leadership abilities and a commitment to excellence. Skilled in data analysis, financial modeling, and team collaboration, with experience gained through internship at Ensign Peak and operational roles in fast-paced environments.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Pre-Business</div>
+                        <div class="item-subtitle">Brigham Young University</div>
+                    </div>
+                    <div class="item-date">Expected Graduation: April 2028</div>
+                </div>
+                <p class="item-description">
+                    <strong>GPA:</strong> 3.75/4.00<br>
+                    <strong>Relevant Coursework:</strong> Business Analytics, Financial Accounting, Data Analysis, Business Statistics, Excel for Business Applications
+                </p>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="resume-section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Intern</div>
+                        <div class="item-subtitle">Ensign Peak</div>
+                    </div>
+                    <div class="item-date">Summer 2024</div>
+                </div>
+                <ul class="item-description">
+                    <li>Supported investment analysis team in evaluating portfolio performance and market trends for institutional investment strategies</li>
+                    <li>Conducted financial data analysis using Excel and SQL to extract insights from complex datasets</li>
+                    <li>Assisted in preparing reports and presentations for senior management, synthesizing technical information into clear, actionable recommendations</li>
+                    <li>Collaborated with cross-functional teams to streamline data collection processes, improving efficiency by 20%</li>
+                    <li>Gained hands-on experience with financial modeling, risk assessment, and investment research methodologies</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Grill Cook</div>
+                        <div class="item-subtitle">Chipotle Mexican Grill</div>
+                    </div>
+                    <div class="item-date">2022 - 2024</div>
+                </div>
+                <ul class="item-description">
+                    <li>Maintained high standards of food quality and safety while managing grill station during peak hours serving 200+ customers daily</li>
+                    <li>Demonstrated strong multitasking abilities by efficiently coordinating multiple orders simultaneously in a fast-paced environment</li>
+                    <li>Trained and mentored new team members on proper cooking techniques, food safety protocols, and customer service standards</li>
+                    <li>Consistently recognized for exceptional time management and ability to maintain composure under pressure</li>
+                    <li>Developed strong teamwork and communication skills through collaboration with kitchen and front-of-house staff</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Leadership & Activities -->
+        <div class="resume-section">
+            <h2 class="section-title">Leadership & Activities</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Co-President</div>
+                        <div class="item-subtitle">Scandinavian Club - Brigham Young University</div>
+                    </div>
+                    <div class="item-date">2024 - Present</div>
+                </div>
+                <ul class="item-description">
+                    <li>Co-lead organization of 50+ members promoting Scandinavian culture, language, and traditions on campus</li>
+                    <li>Coordinate monthly cultural events, guest speakers, and social activities to engage club members and the broader university community</li>
+                    <li>Manage club budget and logistics for events, demonstrating financial planning and organizational skills</li>
+                    <li>Foster an inclusive environment that celebrates cultural diversity and provides networking opportunities for members</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Eagle Scout</div>
+                        <div class="item-subtitle">Boy Scouts of America</div>
+                    </div>
+                    <div class="item-date">Awarded 2021</div>
+                </div>
+                <ul class="item-description">
+                    <li>Planned and executed community service project benefiting local organization, demonstrating project management and leadership capabilities</li>
+                    <li>Led team of 15+ volunteers in completing service initiative, coordinating logistics, materials, and timelines</li>
+                    <li>Developed strong character, outdoor skills, and commitment to service through years of Scouting activities</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume-section">
+            <h2 class="section-title">Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4><i class="fas fa-chart-bar"></i> Technical Skills</h4>
+                    <ul>
+                        <li>Microsoft Excel (Advanced)</li>
+                        <li>Tableau Data Visualization</li>
+                        <li>SQL Database Queries</li>
+                        <li>Python Programming</li>
+                        <li>Financial Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-calculator"></i> Business Skills</h4>
+                    <ul>
+                        <li>Financial Analysis</li>
+                        <li>Data Analytics</li>
+                        <li>Investment Research</li>
+                        <li>Report Writing</li>
+                        <li>Business Intelligence</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4><i class="fas fa-users"></i> Soft Skills</h4>
+                    <ul>
+                        <li>Leadership & Team Management</li>
+                        <li>Problem Solving</li>
+                        <li>Communication</li>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Honors & Awards -->
+        <div class="resume-section">
+            <h2 class="section-title">Honors & Awards</h2>
+            <ul class="honors-list">
+                <li><i class="fas fa-star"></i> National Honor Society Member - Recognized for academic excellence, leadership, service, and character</li>
+                <li><i class="fas fa-award"></i> Eagle Scout Award - Boy Scouts of America's highest rank, achieved by fewer than 6% of all Scouts</li>
+                <li><i class="fas fa-trophy"></i> Dean's List - Brigham Young University (2024)</li>
+            </ul>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="resume-section">
+            <h2 class="section-title">Additional Information</h2>
+            <ul class="item-description">
+                <li><strong>Volunteer Work:</strong> Active in community service through Scandinavian Club cultural outreach and Eagle Scout project</li>
+                <li><strong>Languages:</strong> English (Native), Basic Scandinavian language exposure through club activities</li>
+                <li><strong>Interests:</strong> Financial markets, data analytics, Nordic culture, outdoor recreation</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
